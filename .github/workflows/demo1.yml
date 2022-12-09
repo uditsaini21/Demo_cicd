@@ -5,15 +5,12 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches:
-    
      - main
      - DEV
      - QA
      
     paths:
-    
      - 'snowflake-scripts/etl-pipeline/etl-scripts/**'
-     
   workflow_dispatch:
 
 jobs:
@@ -84,4 +81,4 @@ jobs:
            pip install schemachange
            
            echo "Step 2: Running schemachange"
-           schemachange --config-folder snowflake-scripts/etl-pipeline/yaml-configs-for-etl-scripts -f $GITHUB_WORKSPACE/snowflake-scripts/etl-pipeline/etl-scripts -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE_PRD.CHANGE_HISTORY --create-change-history-table
+           schemachange --config-folder snowflake-scripts/etl-pipeline/yaml-configs-for-etl-scripts -f $GITHUB_WORKSPACE/snowflake-scripts/etl-pipeline/etl-scripts -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE_PRD.CHANGE_HISTORY --create-change-history-table  
