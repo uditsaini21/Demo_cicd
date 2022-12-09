@@ -15,7 +15,6 @@ on:
      - 'snowflake-scripts/etl-pipeline/etl-scripts/**'
      
   workflow_dispatch:
-	
 
 jobs:
  deploy-Snowflake-changes-job:
