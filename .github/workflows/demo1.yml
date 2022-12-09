@@ -45,7 +45,7 @@ jobs:
            pip install schemachange
            
            echo "Step 2: Running schemachange"
-           schemachange -f $GITHUB_WORKSPACE/snowflake-scripts/etl-pipeline/yaml-configs-for-etl-scripts/  -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE_DEV.CHANGE_HISTORY --create-change-history-table  
+           schemachange -f $GITHUB_WORKSPACE/snowflake-scripts/etl-pipeline/etl-scripts/  -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE_DEV.CHANGE_HISTORY --create-change-history-table  
        - name: Run schemachange = QA
          if: ${{ steps.extract_branch.outputs.branch == 'QA' }}
          env:
@@ -63,7 +63,7 @@ jobs:
            pip install schemachange
            
            echo "Step 2: Running schemachange"
-           schemachange -f $GITHUB_WORKSPACE/snowflake-scripts/etl-pipeline/yaml-configs-for-etl-scripts/ -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE_QA.CHANGE_HISTORY --create-change-history-table  
+           schemachange -f $GITHUB_WORKSPACE/snowflake-scripts/etl-pipeline/etl-scripts/ -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE_QA.CHANGE_HISTORY --create-change-history-table  
        - name: Run schemachange PRD
          if: ${{ steps.extract_branch.outputs.branch == 'main' }}
          env:
@@ -81,4 +81,4 @@ jobs:
            pip install schemachange
            
            echo "Step 2: Running schemachange"
-           schemachange -f $GITHUB_WORKSPACE/snowflake-scripts/etl-pipeline/yaml-configs-for-etl-scripts/ -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE_PRD.CHANGE_HISTORY --create-change-history-table  
+           schemachange -f $GITHUB_WORKSPACE/snowflake-scripts/etl-pipeline/etl-scripts/ -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE_PRD.CHANGE_HISTORY --create-change-history-table  
