@@ -2,7 +2,7 @@ config-version: 1
 	
 # Define values for the variables to replaced in change scripts
 vars:
-   VAR_PROD_DB: 'LZ_WEBLOG_TEST'
-   VAR_PROD_SCH: 'RENT'
-   VAR_ROLE_PROD: 'SYSADMIN'
+   VAR_QA_DB: 'LZ_WEBLOG_TEST'
+   VAR_QA_SCH: 'RENT'
+   VAR_ROLE_QA: 'SYSADMIN'
    VAR_WH: 'LANDING_WH'
