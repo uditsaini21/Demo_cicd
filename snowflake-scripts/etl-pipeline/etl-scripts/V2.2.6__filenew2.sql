@@ -1,1 +1,2 @@
 USE SCHEMA {{ env_var('VAR_SCH') }};
+CREATE TABLE TAB1(ROW INT);
