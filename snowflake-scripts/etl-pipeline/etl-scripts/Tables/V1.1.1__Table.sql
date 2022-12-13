@@ -1,3 +1,3 @@
 USE SCHEMA NEW_RENT;
 INSERT INTO  NEW_RENT_TABLE
-VALUES('sainiudit@gmail.com',92074674324);
+VALUES('rahul@gmail.com',920788772);
